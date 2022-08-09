@@ -107,29 +107,34 @@ def arithmetic_arranger(problems,solve = False):
 
   return arranged_problems
 
+if __name__ == '__main__':
+  answers = ['  3801      123\n'
+             '-    2    +  49\n'
+             '------    -----', '  1         1\n'
+                                '+ 2    - 9380\n'
+                                '---    ------', '    3      3801      45      123\n'
+                                                 '+ 855    -    2    + 43    +  49\n'
+                                                 '-----    ------    ----    -----',
+             '  11      3801      1      123         1\n'
+             '+  4    - 2999    + 2    +  49    - 9380\n'
+             '----    ------    ---    -----    ------', 'Error: Too many problems.',
+             'Error: Operator must be \'+\' or \'-\'.', 'Error: Numbers cannot be more than four digits.',
+             'Error: Numbers must only contain digits.', '    3      988\n'
+                                                         '+ 855    +  40\n'
+                                                         '-----    -----\n'
+                                                         '  858     1028', '   32         1      45      123      988\n'
+                                                                           '- 698    - 3801    + 43    +  49    +  40\n'
+                                                                           '-----    ------    ----    -----    -----\n'
+                                                                           ' -666     -3800      88      172     1028']
+  problems = [['3801 - 2', '123 + 49'], ['1 + 2', '1 - 9380'], ['3 + 855', '3801 - 2', '45 + 43', '123 + 49'],
+              ['11 + 4', '3801 - 2999', '1 + 2', '123 + 49', '1 - 9380'],
+              ['44 + 815', '909 - 2', '45 + 43', '123 + 49', '888 + 40', '653 + 87'],
+              ['3 / 855', '3801 - 2', '45 + 43', '123 + 49'], ['24 + 85215', '3801 - 2', '45 + 43', '123 + 49'],
+              ['98 + 3g5', '3801 - 2', '45 + 43', '123 + 49'], ['3 + 855', '988 + 40'],
+              ['32 - 698', '1 - 3801', '45 + 43', '123 + 49', '988 + 40']]
 
-answers = ['  3801      123\n'
-        '-    2    +  49\n'
-        '------    -----','  1         1\n'
-        '+ 2    - 9380\n'
-        '---    ------','    3      3801      45      123\n'
-        '+ 855    -    2    + 43    +  49\n'
-        '-----    ------    ----    -----','  11      3801      1      123         1\n'
-        '+  4    - 2999    + 2    +  49    - 9380\n'
-        '----    ------    ---    -----    ------','Error: Too many problems.','Error: Operator must be \'+\' or \'-\'.','Error: Numbers cannot be more than four digits.','Error: Numbers must only contain digits.','    3      988\n'
-        '+ 855    +  40\n'
-        '-----    -----\n'
-        '  858     1028','   32         1      45      123      988\n'
-        '- 698    - 3801    + 43    +  49    +  40\n'
-        '-----    ------    ----    -----    -----\n'
-        ' -666     -3800      88      172     1028']
-problems = [['3801 - 2', '123 + 49'],['1 + 2', '1 - 9380'],['3 + 855', '3801 - 2', '45 + 43', '123 + 49'],['11 + 4', '3801 - 2999', '1 + 2', '123 + 49', '1 - 9380'],['44 + 815', '909 - 2', '45 + 43', '123 + 49','888 + 40', '653 + 87'],['3 / 855', '3801 - 2', '45 + 43', '123 + 49'],['24 + 85215', '3801 - 2', '45 + 43', '123 + 49'],['98 + 3g5', '3801 - 2', '45 + 43', '123 + 49'],['3 + 855', '988 + 40'],['32 - 698', '1 - 3801', '45 + 43', '123 + 49', '988 + 40']]
-'''
-for i in range(len(problems)):
-  if arithmetic_arranger(problems[i])==answers[i] :
-    print(f'{i}- True')
-  else:
-    print(f'{i}- False\n{arithmetic_arranger(problems[i])} {answers[i]}')
-'''
-print(f'8- False\n{arithmetic_arranger(problems[8],True)}\n{answers[8]}')
-print(f'9- False\n{arithmetic_arranger(problems[9],True)}\n{answers[9]}')
+  for i in range(len(problems)):
+    if arithmetic_arranger(problems[i]) == answers[i]:
+      print(f'{i}- True')
+    else:
+      print(f'{i}- False\n{arithmetic_arranger(problems[i])} {answers[i]}')
